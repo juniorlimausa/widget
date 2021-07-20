@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Widget is not nested</name>
+    <style>none</style>
+    <subject>Widget {!Widget__c.Name} is not Nested</subject>
+    <textOnly>Hello,
+
+The Widget {!Widget__c.Name} is not Nested:
+{!Widget__c.Link}</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,4 @@
+Hello, <br/><br/>
+
+The Widget {!Widget__c.Name} is not Nested:<br/>
+{!Widget__c.Link}

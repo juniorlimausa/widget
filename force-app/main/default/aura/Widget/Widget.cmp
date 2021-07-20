@@ -1,0 +1,36 @@
+<!--
+  @description       : Nesting Challenge
+  @author            : junior.lima
+  @group             : 
+  @last modified on  : 07-20-2021
+  @last modified by  : junior.lima
+  Modifications Log 
+  Ver   Date         Author                               Modification
+  1.0   07-17-2021  junior.lima                           Initial Version
+-->
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,lightning:isUrlAddressable" access="global" controller="WidgetNestedValidation">
+    <aura:attribute name="CurrentUser" type="Object"/>
+    <aura:attribute name="showSave" type="Boolean" default="false"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <div class="main_block">
+        <div>
+         <lightning:card>
+           <aura:set attribute="title"> Nesting Challenge
+           </aura:set>
+           <aura:set attribute="footer">
+                <div class="row">
+                    <lightning:textarea name="input" aura:id="inputText" maxlength="131072" minlength = "1" label="Widget Value:" onchange="{!c.inputValue}"/>
+                </div>
+                <div class="modal-footer slds-modal__footer attach-to-bottom">
+                    <aura:if isTrue="{!not(v.showSave)}">
+                        <lightning:button iconName="utility:warning" iconPosition="left" class="slds-button slds-button_brand" disabled="disabled" label="Invalid"/>
+                    </aura:if>
+                    <aura:if isTrue="{!v.showSave}">
+                        <lightning:button iconName="utility:send" class="slds-button slds-button_brand" label="Save"  onclick="{! c.saveClick }" />
+                    </aura:if>
+                </div>
+           </aura:set>
+         </lightning:card>
+       </div>
+    </div>
+</aura:component>
