@@ -20,6 +20,10 @@
         <apexClass>WidgetNestedValidationTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
+    <classAccesses>
+        <apexClass>WidgetTriggerHandler</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
     <custom>true</custom>
     <fieldPermissions>
         <editable>true</editable>
@@ -36,10 +40,6 @@
         <field>Widget__c.Value__c</field>
         <readable>true</readable>
     </fieldPermissions>
-    <pageAccesses>
-        <apexPage>TalkdeskPopUpPage</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
     <tabVisibilities>
         <tab>Widget_Input_Page</tab>
         <visibility>DefaultOn</visibility>

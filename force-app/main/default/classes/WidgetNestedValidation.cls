@@ -26,14 +26,14 @@ public with sharing class WidgetNestedValidation {
     /** AURA ENABLED FUNCTION TO INSERT A NEW WIDGET RECORD **/
     @AuraEnabled
     public static string saveRecord(string inputText) {
-        td_space__Widget__c newWidget = new td_space__Widget__c();
-        newWidget.td_space__Value__c = inputText;
-        newWidget.td_space__Is_Properly_Nested__c = matcherLoop(inputText);
+        Widget__c newWidget = new Widget__c();
+        newWidget.Value__c = inputText;
+        newWidget.Is_Properly_Nested__c = matcherLoop(inputText);
         insert newWidget;
 
         if (newWidget.Id != null) {
-            td_space__Widget__c newWidgetRecordCreated = [SELECT 
-            Name FROM td_space__Widget__c where Id =: newWidget.Id LIMIT 1];
+            Widget__c newWidgetRecordCreated = [SELECT 
+            Name FROM Widget__c where Id =: newWidget.Id LIMIT 1];
             return newWidgetRecordCreated.Name;
         }
         

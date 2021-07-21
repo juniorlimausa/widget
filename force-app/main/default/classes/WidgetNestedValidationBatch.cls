@@ -12,19 +12,18 @@ global class WidgetNestedValidationBatch implements Database.batchable<sObject>{
     global Database.QueryLocator start(Database.BatchableContext bc){
         /** SELECT WIDGETS RECORDS CREATED LAST HOUR **/
         DateTime lastHourDateTime = System.Now().addHours(-1);
-        String query = 'SELECT  Id, Name, td_space__Batch_Updated__c, td_space__Is_Properly_Nested__c, td_space__Value__c FROM td_space__Widget__c WHERE CreatedDate >= :lastHourDateTime';
+        String query = 'SELECT  Id, Name, Batch_Updated__c, Is_Properly_Nested__c, Value__c FROM Widget__c WHERE CreatedDate >= :lastHourDateTime';
         return Database.getQueryLocator(query);
     }
 
-    global void execute(Database.BatchableContext bd, List<td_space__Widget__c> listWidgetsLastHours)
+    global void execute(Database.BatchableContext bd, List<Widget__c> listWidgetsLastHours)
     {
         System.debug(listWidgetsLastHours);
 
-        for(td_space__Widget__c unitWidget : listWidgetsLastHours)
+        for(Widget__c unitWidget : listWidgetsLastHours)
         {          
             /** USE THE GLOBAL MATCHER TO DEFINE IF IT IS NESTED OR NOT **/
-            unitWidget.td_space__Is_Properly_Nested__c = WidgetNestedValidation.matcherLoop(unitWidget.td_space__Value__c);
-            unitWidget.td_space__Batch_Updated__c = TRUE;
+            unitWidget.Batch_Updated__c = TRUE;
         }
         update listWidgetsLastHours;
     }
