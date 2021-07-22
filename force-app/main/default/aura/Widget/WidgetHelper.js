@@ -30,8 +30,9 @@
 					"type": 'success',  
 					"title": 'Success',
 					"message": 'The widget ' + recordName + ' has been created.'
-
 				});
+				component.find("inputText").set("v.value", "");
+
 				resultsToast.fire();
 			}else{
 				console.log('ERROR --- ' + response.getReturnValue());

@@ -5,6 +5,8 @@
     <columns>Value__c</columns>
     <columns>Is_Properly_Nested__c</columns>
     <columns>Batch_Updated__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>LAST_UPDATE</columns>
     <filterScope>Everything</filterScope>
     <label>All</label>
 </ListView>

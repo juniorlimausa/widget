@@ -2,7 +2,7 @@
  * @description       : Nesting Challenge - Enpal
  * @author            : junior95lima@gmail.com 
  * @group             : 
- * @last modified on  : 07-20-2021
+ * @last modified on  : 07-21-2021
  * @last modified by  : junior.lima
  * Modifications Log 
  * Ver   Date         Author                   Modification
@@ -28,7 +28,6 @@ public with sharing class WidgetNestedValidation {
     public static string saveRecord(string inputText) {
         Widget__c newWidget = new Widget__c();
         newWidget.Value__c = inputText;
-        newWidget.Is_Properly_Nested__c = matcherLoop(inputText);
         insert newWidget;
 
         if (newWidget.Id != null) {
@@ -66,7 +65,6 @@ public with sharing class WidgetNestedValidation {
         while (masterMatcher.find()){
             /** CONCATENATE ALL INPUTS IN ONLY ONE STRING OUTPUT **/
             outputToAnalyse += String.valueOf(masterMatcher.group());
-            System.debug(String.valueOf(masterMatcher.group()));
         } 
 
         /** LOGIC TO AVOID INVERTED INPUTS AFTER THE REGEX REGREATION **/

@@ -3,7 +3,7 @@
     <fullName>Batch_Updated__c</fullName>
     <defaultValue>false</defaultValue>
     <externalId>false</externalId>
-    <label>Batch Updated</label>
+    <label>Batch Updated / Emailed</label>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>
 </CustomField>

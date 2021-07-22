@@ -2,7 +2,7 @@
  * @description       : 
  * @author            : junior.lima
  * @group             : 
- * @last modified on  : 07-20-2021
+ * @last modified on  : 07-22-2021
  * @last modified by  : junior.lima
  * Modifications Log 
  * Ver   Date         Author        Modification
@@ -42,7 +42,7 @@ public with sharing class  WidgetNestedValidationTest {
             System.AssertEquals(invalidInput2, false);
 
             /** TESTING IF THE INPUTED RECORD RETURNED THE RECORD NAME **/
-            String rightRecordId = WidgetNestedValidation.saveRecord('{[()]}');
+            String rightRecordId = WidgetNestedValidation.saveRecord('{[()]})))');
             System.AssertEquals(rightRecordId != null, true);
 
         Test.stopTest();
@@ -51,8 +51,13 @@ public with sharing class  WidgetNestedValidationTest {
     @isTest
     public static void bacthClassTest() {
 
-        String rightRecordName = WidgetNestedValidation.saveRecord('{[()]}');
+        /** CREATE RECORDS TO BE TESTED BY THE BATCH CLASS **/
+        WidgetNestedValidation.saveRecord('()]}');
+
         Test.startTest();
+            /** CREATE RECORDS TO BE TESTED BY THE BATCH CLASS **/
+            WidgetNestedValidation.saveRecord('{[((((()]}');
+
             /** TESTING THE BATCH CLASS THAT SETS WHETHER THE INPUT IS NESTED OR NOT **/
             SchedulableContext sc = null;
             WidgetNestedValidationSchedulable sClass = new WidgetNestedValidationSchedulable();
